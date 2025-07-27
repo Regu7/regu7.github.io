@@ -33,10 +33,30 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
 
         .animate-fade-in-down { animation: fadeInDown 0.6s ease-out forwards; }
         .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
         .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+
+        /* Initial state for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* Education timeline specific styles */
         .timeline-item {
@@ -71,6 +91,33 @@
             border: 2px solid #000000; /* Background color border to stand out on line */
             z-index: 10;
         }
+
+        /* Custom bullet point styles */
+        .fancy-list {
+            list-style: none; /* Remove default bullet points */
+            padding-left: 0;
+        }
+
+        .fancy-list li {
+            position: relative;
+            padding-left: 1.5em; /* Space for custom bullet */
+            margin-bottom: 0.5em; /* Space between list items */
+        }
+
+        .fancy-list li::before {
+            content: '•'; /* Unicode bullet character or any other character */
+            color: #9eed0c; /* Green color for the bullet */
+            position: absolute;
+            left: 0;
+            font-size: 1.2em; /* Slightly larger bullet */
+            line-height: 1; /* Align with text */
+            top: 0.1em; /* Adjust vertical alignment */
+        }
+
+        /* Custom glow effect for sections */
+        .section-glow {
+            box-shadow: 0 0 15px rgba(158, 237, 12, 0.3), 0 0 30px rgba(158, 237, 12, 0.1);
+        }
     </style>
 </head>
 <body class="bg-[#161715] text-white min-h-screen">
@@ -78,7 +125,7 @@
     <div id="app-container" class="p-6 md:p-10 max-w-7xl mx-auto">
 
         <!-- Intro Section -->
-        <section class="mb-12 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 p-8 rounded-xl shadow-2xl border border-gray-700 bg-[#000000] animate-fade-in-down">
+        <section class="mb-12 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] bg-[#000000] animate-fade-in-down section-glow">
             <!-- Left Column: Greeting and Intro Text -->
             <div class="flex-1 text-center lg:text-left">
                 <p class="text-xl md:text-2xl text-gray-300 mb-2">Hello, I'm</p>
@@ -112,7 +159,7 @@
                         <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.814h.063c.522-.843 1.758-1.924 3.75-1.924 4.011 0 4.237 2.655 4.237 6.17V19z" />
                         </svg>
-                        <a href="https://linkedin.com/in/regunanthan" target="_blank" rel="noopener noreferrer" class="hover:text-[#9eed0c] transition-colors duration-300">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/regunanthan/" target="_blank" rel="noopener noreferrer" class="hover:text-[#9eed0c] transition-colors duration-300">LinkedIn</a>
                     </div>
                     <div class="flex items-center">
                         <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -146,13 +193,13 @@
         </section>
 
         <!-- Experience Section -->
-        <section class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border border-gray-700 animate-fade-in-up">
+        <section id="experience-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
             <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Experience</h2>
 
             <!-- Deloitte Consultant -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Consultant, Deloitte <span class="text-gray-400 text-base font-normal">| Toronto, ON | Oct 2023 - Present</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Analyzed, validated, and optimized Generative AI models, enhancing model accuracy.</li>
                     <li>Developed business intelligence reports using advanced SQL.</li>
                     <li>Implemented data extraction processes for efficient data migration to outbound systems.</li>
@@ -162,7 +209,7 @@
             <!-- Vosyn ML Engineer Intern -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">ML Engineer Intern, Vosyn <span class="text-gray-400 text-base font-normal">| Toronto, ON | Feb 2024 - May 2024</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Achieved a 15% improvement in transcription accuracy by researching and implementing noise suppression techniques for Speech-to-Text applications.</li>
                     <li>Implemented NLP solutions using Hugging Face Transformers, with experience in fine-tuning LLMs and RAG workflows.</li>
                     <li>Developed an LLM-based financial analytics chatbot integrated with financial APIs to provide real-time market analysis.</li>
@@ -172,7 +219,7 @@
             <!-- Tiger Analytics Senior Analyst -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Senior Analyst - Machine Learning Engineer, Tiger Analytics <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2022 - Aug 2023</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Achieved an average MAPE of 10% for known time series datasets by developing an end-to-end time series demand forecasting tool with 13+ algorithms.</li>
                     <li>Improved detection rates by 20% by creating an advanced anomaly detection tool with various models for univariate and multivariate time series data.</li>
                     <li>Skilled in leveraging Azure Data Factory and Databricks to facilitate building pipelines for seamless data processing, hyperparameter tuning, model training, and evaluation workflows.</li>
@@ -187,7 +234,7 @@
             <!-- Deloitte Analyst -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Analyst, Deloitte <span class="text-gray-400 text-base font-normal">| Chennai, India | Dec 2021 - Jul 2022</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Pioneered 100% end-to-end data extraction, transformation, and migration to Oracle HCM Cloud.</li>
                     <li>Designed and implemented a comprehensive security strategy for the Oracle Learning Cloud.</li>
                 </ul>
@@ -196,20 +243,20 @@
             <!-- Ford Motors Software Engineer -->
             <div>
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Software Engineer, Ford Motors <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2020 - Dec 2021</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Developed data analysis reports using SQL to extract insights, optimize queries, and support business decisions.</li>
                 </ul>
             </div>
         </section>
 
         <!-- Academic Projects Section -->
-        <section class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border border-gray-700 animate-fade-in-up">
+        <section id="academic-projects-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
             <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Academic Projects</h2>
 
             <!-- Multiclass Object Detection System -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Multiclass Object Detection System <span class="text-gray-400 text-base font-normal">| Python, Docker, AWS (ECR, EC2, ECS), GitHub Actions</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Developed custom YOLOv8 model for 20-class object detection, with 83% average precision at 0.5 IoU threshold.</li>
                     <li>Implemented CI/CD pipeline using GitHub Actions and Docker for automated deployment to AWS ECR, ECS and EC2.</li>
                 </ul>
@@ -218,7 +265,7 @@
             <!-- RAG Based PDF Chatbot -->
             <div class="mb-8">
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">RAG Based PDF Chatbot <span class="text-gray-400 text-base font-normal">| LLM, Langchain, RAG, Azure VM</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Developed a chatbot using a RAG-oriented LLM, with the ability to create a RAG pipeline with the uploaded pdf/csv file.</li>
                     <li>Utilized Langchain for orchestration, ChromaDB for vector store and Azure Virtual Machine with Docker for deployment.</li>
                 </ul>
@@ -227,7 +274,7 @@
             <!-- Loan Default Prediction -->
             <div>
                 <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Loan Default Prediction - End to End Implementation <span class="text-gray-400 text-base font-normal">| Python, XgBoost, AWS EC2</span></h3>
-                <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                     <li>Achieved a ROC AUC score of 0.85 by developing a Loan Default Prediction model for the Lending Club dataset.</li>
                     <li>Deployed the Loan Default Prediction model in AWS EC2 using Docker for scalable and efficient performance.</li>
                 </ul>
@@ -235,43 +282,86 @@
         </section>
 
         <!-- Technical Skills Section -->
-        <section class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border border-gray-700 animate-fade-in-up">
+        <section id="technical-skills-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
             <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Technical Skills</h2>
             <div class="flex flex-wrap gap-4">
                 <div class="w-full md:w-1/2 lg:w-1/3">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Languages & Frameworks:</h3>
-                    <p class="text-gray-300">Python, Bash, Oracle SQL</p>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Python</li>
+                        <li>Bash</li>
+                        <li>Oracle SQL</li>
+                    </ul>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Libraries:</h3>
-                    <p class="text-gray-300">Pandas, NumPy, SkLearn, Plotly, TensorFlow, Keras, PyTorch, HuggingFace, OpenCV, YOLO, UNet, LangChain</p>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>SkLearn</li>
+                        <li>Plotly</li>
+                        <li>TensorFlow</li>
+                        <li>Keras</li>
+                        <li>PyTorch</li>
+                        <li>HuggingFace</li>
+                        <li>OpenCV</li>
+                        <li>YOLO</li>
+                        <li>UNet</li>
+                        <li>LangChain</li>
+                    </ul>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Developer Tools:</h3>
-                    <p class="text-gray-300">Git, Docker, Databricks, Kubernetes, Jupyter, Github Actions, DVC, PowerBI, Tableau</p>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Databricks</li>
+                        <li>Kubernetes</li>
+                        <li>Jupyter</li>
+                        <li>Github Actions</li>
+                        <li>DVC</li>
+                        <li>PowerBI</li>
+                        <li>Tableau</li>
+                    </ul>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Skills:</h3>
-                    <p class="text-gray-300">Computer Vision, NLP, Demand Forecasting, Deep Learning, Machine Learning, GenAI, Data Manipulation, LLM</p>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Computer Vision</li>
+                        <li>NLP</li>
+                        <li>Demand Forecasting</li>
+                        <li>Deep Learning</li>
+                        <li>Machine Learning</li>
+                        <li>GenAI</li>
+                        <li>Data Manipulation</li>
+                        <li>LLM</li>
+                    </ul>
                 </div>
                 <div class="w-full">
                     <h3 class="text-xl font-semibold text-gray-200 mb-2">Cloud Services:</h3>
-                    <p class="text-gray-300">Azure (Machine Learning, Azure Data Factory, Virtual Machines, Logic App, Databricks, Blob Storage, Azure Functions, Azure Data Lake), Oracle Analytics Publisher, AWS (Sagemaker, EC2, Athena, S3, Glue, Kinesis Data Firehose, Step functions, Pipelines, CloudWatch, ECR, ECS, Lambda, Bedrock), MLFlow, Heroku, Vertex AI</p>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Azure (Machine Learning, Azure Data Factory, Virtual Machines, Logic App, Databricks, Blob Storage, Azure Functions, Azure Data Lake)</li>
+                        <li>Oracle Analytics Publisher</li>
+                        <li>AWS (Sagemaker, EC2, Athena, S3, Glue, Kinesis Data Firehose, Step functions, Pipelines, CloudWatch, ECR, ECS, Lambda, Bedrock)</li>
+                        <li>MLFlow</li>
+                        <li>Heroku</li>
+                        <li>Vertex AI</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
-        <section class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border border-gray-700 animate-fade-in-up">
+        <section id="certifications-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
             <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Certifications</h2>
-            <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+            <ul class="fancy-list text-gray-300 ml-4 space-y-1">
                 <li>AWS Machine Learning Specialty <span class="text-gray-400 text-base font-normal">| Apr 2024</span></li>
-                <li>Azure AI Fundamentals <span class="text-gray-400 text-base font-normal">| Apr 2023</span></li>
+                <li>Azure AI Fundamentals <span class="text-400 text-base font-normal">| Apr 2023</span></li>
             </ul>
         </section>
 
         <!-- Education Section -->
-        <section class="bg-[#000000] p-8 rounded-xl shadow-2xl border border-gray-700 animate-fade-in-up">
+        <section id="education-section" class="bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
             <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2 flex items-center">
                 <svg class="w-8 h-8 mr-3 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3L1 9l11 6 11-6-11-6zm0 10.96L4.09 9 12 4.04l7.91 4.96L12 13.96zM3 13.96l9 5.04 9-5.04V19l-9 5-9-5v-5.04z"/>
@@ -299,5 +389,30 @@
 
     </div>
 
+    <script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.scroll-animate');
+
+            const observerOptions = {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of the section must be visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
