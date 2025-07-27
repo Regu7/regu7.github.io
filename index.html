@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #282828; /* Main lighter dark grey background */
+            background-color: #282828; /* Main lighter dark grey background (Body) */
             color: #E2E8F0; /* Light text color */
         }
 
@@ -186,7 +186,7 @@
         <!-- Intro Section -->
         <section class="mb-0 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 py-8 px-6 md:px-10 bg-[#1A1A1A] animate-fade-in-down">
             <!-- Left Column: Greeting and Intro Text -->
-            <div class="flex-1 text-center lg:text-left">
+            <div class="flex-1 text-center lg:text-left pr-4">
                 <p class="text-xl md:text-2xl text-[#A0A0A0] mb-2">Hello, I'm</p>
                 <h1 class="text-4xl md:text-6xl font-extrabold text-[#CCFF00] mb-2">
                     Regunanthan Kumaravel
@@ -230,23 +230,23 @@
             </div>
 
             <!-- Middle Column: Profile Picture -->
-            <div class="shrink-0 translate-x-4">
-                <img src="https://raw.githubusercontent.com/Regu7/regu7.github.io/main/assets/images/Profile_picture.jpg" alt="Your Profile Photo" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-[#CCFF00] shadow-lg">
+            <div class="shrink-0 lg:translate-x-12">
+                <img src="https://raw.githubusercontent.com/Regu7/regu7.github.io/main/assets/images/Profile_picture.jpg" alt="Your Profile Photo" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover">
             </div>
 
             <!-- Right Column: Statistics -->
             <div class="flex-1 flex flex-col items-center lg:items-end space-y-4 mt-8 lg:mt-0">
-                <div class="bg-[#1A1A1A] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
+                <div class="bg-[#000000] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
                     <p class="text-3xl font-bold text-[#CCFF00]">4+</p>
                     <p class="text-[#E2E8F0]">Years Of Experience</p>
                 </div>
-                <div class="bg-[#1A1A1A] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
-                    <p class="text-3xl font-bold text-[#CCFF00]">6+</p>
+                <div class="bg-[#000000] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
+                    <p class="text-3xl font-bold text-[#CCFF00]">10+</p>
                     <p class="text-[#E2E8F0]">ML/AI Projects</p>
                 </div>
-                <div class="bg-[#1A1A1A] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
+                <div class="bg-[#000000] p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
                     <p class="text-3xl font-bold text-[#CCFF00]">100%</p>
-                    <p class="text-[#E2E8F0]">Client Commitment & Delivery</p>
+                    <p class="text-[#E2E8F0]">On-Time Delivery</p>
                 </div>
             </div>
         </section>
@@ -254,7 +254,7 @@
         <!-- Main Content Area - Combined Sections -->
         <div class="p-0 rounded-none shadow-none">
             <!-- Experience Section -->
-            <section id="experience-section" class="mb-0 py-8 px-6 md:px-10 bg-[#1A1A1A] scroll-animate">
+            <section id="experience-section" class="mb-0 py-8 px-6 md:px-10 bg-[#222222] scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#CCFF00] mb-6 text-center max-w-7xl mx-auto">My Work Experience</h2>
 
                 <div class="max-w-7xl mx-auto">
@@ -313,7 +313,7 @@
             </section>
 
             <!-- Academic Projects Section -->
-            <section id="academic-projects-section" class="mb-0 py-8 px-6 md:px-10 bg-[#222222] scroll-animate">
+            <section id="academic-projects-section" class="mb-0 py-8 px-6 md:px-10 bg-[#1A1A1A] scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#CCFF00] mb-6 text-center max-w-7xl mx-auto">Explore My Projects</h2>
 
                 <div class="max-w-7xl mx-auto">
@@ -362,7 +362,7 @@
             </section>
 
             <!-- Technical Skills Section -->
-            <section id="technical-skills-section" class="mb-0 py-8 px-6 md:px-10 bg-[#1A1A1A] scroll-animate">
+            <section id="technical-skills-section" class="mb-0 py-8 px-6 md:px-10 bg-[#222222] scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#CCFF00] mb-6 text-center max-w-7xl mx-auto">My Tech Skills</h2>
                 <div class="max-w-7xl mx-auto">
                     <div class="flex flex-wrap gap-4">
@@ -392,11 +392,17 @@
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
                                     PyTorch
                                 </li>
-                                <li>HuggingFace</li>
+                                <li>
+                                    <img src="https://regu7.github.io/assets/images/huggingface.svg" alt="HuggingFace">
+                                    HuggingFace
+                                </li>
                                 <li>OpenCV</li>
                                 <li>YOLO</li>
                                 <li>UNet</li>
-                                <li>LangChain</li>
+                                <li>
+                                    <img src="https://regu7.github.io/assets/images/langchain.svg" alt="LangChain">
+                                    LangChain
+                                </li>
                                 <li>
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
                                     Pandas
@@ -409,7 +415,10 @@
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn">
                                     SkLearn
                                 </li>
-                                <li>Plotly</li>
+                                <li>
+                                    <img src="https://regu7.github.io/assets/images/plotly.png" alt="Plotly" class="rounded-full">
+                                    Plotly
+                                </li>
                             </ul>
                         </div>
                         <div class="w-full md:w-1/2 lg:w-1/3">
@@ -423,7 +432,10 @@
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
                                     Docker
                                 </li>
-                                <li>Databricks</li>
+                                <li>
+                                    <img src="https://regu7.github.io/assets/images/Databricks.svg" alt="Databricks">
+                                    Databricks
+                                </li>
                                 <li>
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
                                     Kubernetes
@@ -438,11 +450,11 @@
                                 </li>
                                 <li>DVC</li>
                                 <li>
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-plain.svg" alt="PowerBI">
+                                    <img src="https://regu7.github.io/assets/images/powerbi.svg" alt="PowerBI">
                                     PowerBI
                                 </li>
                                 <li>
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tableau/tableau-original.svg" alt="Tableau">
+                                    <img src="https://regu7.github.io/assets/images/tableau-icon-svgrepo-com.svg" alt="Tableau">
                                     Tableau
                                 </li>
                             </ul>
@@ -468,12 +480,12 @@
                                     Azure (Machine Learning, Azure Data Factory, Virtual Machines, Logic App, Databricks, Blob Storage, Azure Functions, Azure Data Lake)
                                 </li>
                                 <li>
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                                    <img src="https://regu7.github.io/assets/images/aws-svgrepo-com.svg" alt="AWS">
                                     AWS (Sagemaker, EC2, Athena, S3, Glue, Kinesis Data Firehose, Step functions, Pipelines, CloudWatch, ECR, ECS, Lambda, Bedrock)
                                 </li>
                                 <li>Oracle Analytics Publisher</li>
                                 <li>
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mlflow/mlflow-original.svg" alt="MLFlow">
+                                    <img src="https://regu7.github.io/assets/images/MLFLOW.svg" alt="MLFlow">
                                     MLFlow
                                 </li>
                                 <li>Heroku</li>
@@ -485,7 +497,7 @@
             </section>
 
             <!-- Certifications Section -->
-            <section id="certifications-section" class="mb-0 py-8 px-6 md:px-10 bg-[#222222] scroll-animate">
+            <section id="certifications-section" class="mb-0 py-8 px-6 md:px-10 bg-[#1A1A1A] scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#CCFF00] mb-6 text-center max-w-7xl mx-auto">My Certifications</h2>
                 <div class="max-w-7xl mx-auto flex flex-col items-center gap-4">
                     <div class="certification-item">AWS Machine Learning Specialty</div>
@@ -494,7 +506,7 @@
             </section>
 
             <!-- Education Section -->
-            <section id="education-section" class="py-8 px-6 md:px-10 bg-[#1A1A1A] scroll-animate">
+            <section id="education-section" class="py-8 px-6 md:px-10 bg-[#222222] scroll-animate">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#CCFF00] mb-6 flex items-center text-center justify-center max-w-7xl mx-auto">
                     <svg class="w-8 h-8 mr-3 text-[#CCFF00]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 3L1 9l11 6 11-6-11-6zm0 10.96L4.09 9 12 4.04l7.91 4.96L12 13.96zM3 13.96l9 5.04 9-5.04V19l-9 5-9-5v-5.04z"/>
