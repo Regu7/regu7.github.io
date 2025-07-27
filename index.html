@@ -33,15 +33,6 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
 
         .animate-fade-in-down { animation: fadeInDown 0.6s ease-out forwards; }
         .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
@@ -86,7 +77,7 @@
             top: 0;
             width: 1rem;
             height: 1rem;
-            background-color: #9eed0c; /* Green dot */
+            background-color: #deed0c; /* Green dot */
             border-radius: 9999px; /* Make it a circle */
             border: 2px solid #000000; /* Background color border to stand out on line */
             z-index: 10;
@@ -106,7 +97,7 @@
 
         .fancy-list li::before {
             content: '•'; /* Unicode bullet character or any other character */
-            color: #9eed0c; /* Green color for the bullet */
+            color: #deed0c; /* Green color for the bullet */
             position: absolute;
             left: 0;
             font-size: 1.2em; /* Slightly larger bullet */
@@ -114,9 +105,9 @@
             top: 0.1em; /* Adjust vertical alignment */
         }
 
-        /* Custom glow effect for sections */
-        .section-glow {
-            box-shadow: 0 0 15px rgba(158, 237, 12, 0.3), 0 0 30px rgba(158, 237, 12, 0.1);
+        /* Custom glow effect for intro section */
+        .intro-section-glow {
+            box-shadow: 0 0 15px rgba(222, 237, 12, 0.3), 0 0 30px rgba(222, 237, 12, 0.1);
         }
     </style>
 </head>
@@ -125,11 +116,11 @@
     <div id="app-container" class="p-6 md:p-10 max-w-7xl mx-auto">
 
         <!-- Intro Section -->
-        <section class="mb-12 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] bg-[#000000] animate-fade-in-down section-glow">
+        <section class="mb-12 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between gap-8 p-8 rounded-xl shadow-2xl border-2 border-[#deed0c] bg-[#000000] animate-fade-in-down intro-section-glow">
             <!-- Left Column: Greeting and Intro Text -->
             <div class="flex-1 text-center lg:text-left">
                 <p class="text-xl md:text-2xl text-gray-300 mb-2">Hello, I'm</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-[#9eed0c] mb-2">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#deed0c] mb-2">
                     REGUNANTHAN KUMARAVEL
                 </h1>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-200 mb-6">
@@ -144,248 +135,251 @@
                 <!-- Updated Contact Info Layout -->
                 <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-gray-400 text-lg">
                     <div class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+                        <svg class="w-5 h-5 mr-2 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
                         <span>Oshawa, ON, CA</span>
                     </div>
                     <div class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.11.35.03.74-.25 1.02L6.62 10.79z"/></svg>
+                        <svg class="w-5 h-5 mr-2 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.11.35.03.74-.25 1.02L6.62 10.79z"/></svg>
                         <span>(437) 663-6203</span>
                     </div>
                     <div class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        <a href="mailto:nanthan.regu@gmail.com" class="hover:text-[#9eed0c] transition-colors duration-300">nanthan.regu@gmail.com</a>
+                        <svg class="w-5 h-5 mr-2 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:nanthan.regu@gmail.com" class="hover:text-[#deed0c] transition-colors duration-300">nanthan.regu@gmail.com</a>
                     </div>
                     <div class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-5 h-5 mr-2 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.814h.063c.522-.843 1.758-1.924 3.75-1.924 4.011 0 4.237 2.655 4.237 6.17V19z" />
                         </svg>
-                        <a href="https://www.linkedin.com/in/regunanthan/" target="_blank" rel="noopener noreferrer" class="hover:text-[#9eed0c] transition-colors duration-300">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/regunanthan/" target="_blank" rel="noopener noreferrer" class="hover:text-[#deed0c] transition-colors duration-300">LinkedIn</a>
                     </div>
                     <div class="flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-5 h-5 mr-2 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.165 6.839 9.48.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.455-1.157-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.089 2.91.832.092-.647.35-1.089.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.006 9.006 0 0112 5.042c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.025 2.747-1.025.546 1.378.202 2.397.098 2.65.64.699 1.029 1.593 1.029 2.683 0 3.84-2.339 4.687-4.566 4.935.359.308.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.483C21.137 20.163 24 16.417 24 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
                         </svg>
-                        <a href="https://github.com/Regu7" target="_blank" rel="noopener noreferrer" class="hover:text-[#9eed0c] transition-colors duration-300">GitHub</a>
+                        <a href="https://github.com/Regu7" target="_blank" rel="noopener noreferrer" class="hover:text-[#deed0c] transition-colors duration-300">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <!-- Middle Column: Profile Picture -->
             <div class="shrink-0">
-                <img src="https://raw.githubusercontent.com/Regu7/regu7.github.io/main/assets/images/Profile_picture.jpg" alt="Your Profile Photo" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-[#9eed0c] shadow-lg">
+                <img src="https://raw.githubusercontent.com/Regu7/regu7.github.io/main/assets/images/Profile_picture.jpg" alt="Your Profile Photo" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-[#deed0c] shadow-lg">
             </div>
 
             <!-- Right Column: Statistics -->
             <div class="flex-1 flex flex-col items-center lg:items-end space-y-4 mt-8 lg:mt-0">
                 <div class="bg-gray-800 p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
-                    <p class="text-3xl font-bold text-[#9eed0c]">4+</p>
+                    <p class="text-3xl font-bold text-[#deed0c]">4+</p>
                     <p class="text-gray-300">Years Of Experience</p>
                 </div>
                 <div class="bg-gray-800 p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
-                    <p class="text-3xl font-bold text-[#9eed0c]">6+</p>
+                    <p class="text-3xl font-bold text-[#deed0c]">6+</p>
                     <p class="text-gray-300">ML/AI Projects</p>
                 </div>
                 <div class="bg-gray-800 p-4 rounded-lg text-center w-full max-w-[200px] shadow-md">
-                    <p class="text-3xl font-bold text-[#9eed0c]">100%</p>
+                    <p class="text-3xl font-bold text-[#deed0c]">100%</p>
                     <p class="text-gray-300">Client Commitment & Delivery</p>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Experience</h2>
+        <!-- Main Content Area - Combined Sections -->
+        <div class="bg-[#000000] p-8 rounded-xl shadow-2xl">
+            <!-- Experience Section -->
+            <section id="experience-section" class="mb-12 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#deed0c] mb-6 border-b-2 border-[#deed0c] pb-2">Experience</h2>
 
-            <!-- Deloitte Consultant -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Consultant, Deloitte <span class="text-gray-400 text-base font-normal">| Toronto, ON | Oct 2023 - Present</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Analyzed, validated, and optimized Generative AI models, enhancing model accuracy.</li>
-                    <li>Developed business intelligence reports using advanced SQL.</li>
-                    <li>Implemented data extraction processes for efficient data migration to outbound systems.</li>
-                </ul>
-            </div>
-
-            <!-- Vosyn ML Engineer Intern -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">ML Engineer Intern, Vosyn <span class="text-gray-400 text-base font-normal">| Toronto, ON | Feb 2024 - May 2024</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Achieved a 15% improvement in transcription accuracy by researching and implementing noise suppression techniques for Speech-to-Text applications.</li>
-                    <li>Implemented NLP solutions using Hugging Face Transformers, with experience in fine-tuning LLMs and RAG workflows.</li>
-                    <li>Developed an LLM-based financial analytics chatbot integrated with financial APIs to provide real-time market analysis.</li>
-                </ul>
-            </div>
-
-            <!-- Tiger Analytics Senior Analyst -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Senior Analyst - Machine Learning Engineer, Tiger Analytics <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2022 - Aug 2023</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Achieved an average MAPE of 10% for known time series datasets by developing an end-to-end time series demand forecasting tool with 13+ algorithms.</li>
-                    <li>Improved detection rates by 20% by creating an advanced anomaly detection tool with various models for univariate and multivariate time series data.</li>
-                    <li>Skilled in leveraging Azure Data Factory and Databricks to facilitate building pipelines for seamless data processing, hyperparameter tuning, model training, and evaluation workflows.</li>
-                    <li>Hands-on experience in operationalizing ML projects using Azure Machine Learning, MLflow, and AWS SageMaker for model training, deployment, monitoring, and lifecycle management.</li>
-                    <li>Developed interactive dashboards using Panel and Bokeh for effective exploratory data analysis and model evaluation.</li>
-                    <li>Built a price comparison application using Plotly Dash, providing users with interactive charts and visualizations for retail analytics.</li>
-                    <li>Hands-on experience with Python and machine learning frameworks such as Hugging Face, TensorFlow, Keras, and PyTorch, as well as statistical and analytics tools including BigQuery.</li>
-                    <li>Designed and fine-tuned predictive models using regression, decision trees, and deep learning techniques, optimizing performance through hyperparameter tuning and evaluating results with metrics like MAPE, RMSE, and ROC AUC.</li>
-                </ul>
-            </div>
-
-            <!-- Deloitte Analyst -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Analyst, Deloitte <span class="text-gray-400 text-base font-normal">| Chennai, India | Dec 2021 - Jul 2022</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Pioneered 100% end-to-end data extraction, transformation, and migration to Oracle HCM Cloud.</li>
-                    <li>Designed and implemented a comprehensive security strategy for the Oracle Learning Cloud.</li>
-                </ul>
-            </div>
-
-            <!-- Ford Motors Software Engineer -->
-            <div>
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Software Engineer, Ford Motors <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2020 - Dec 2021</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Developed data analysis reports using SQL to extract insights, optimize queries, and support business decisions.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Academic Projects Section -->
-        <section id="academic-projects-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Academic Projects</h2>
-
-            <!-- Multiclass Object Detection System -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Multiclass Object Detection System <span class="text-gray-400 text-base font-normal">| Python, Docker, AWS (ECR, EC2, ECS), GitHub Actions</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Developed custom YOLOv8 model for 20-class object detection, with 83% average precision at 0.5 IoU threshold.</li>
-                    <li>Implemented CI/CD pipeline using GitHub Actions and Docker for automated deployment to AWS ECR, ECS and EC2.</li>
-                </ul>
-            </div>
-
-            <!-- RAG Based PDF Chatbot -->
-            <div class="mb-8">
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">RAG Based PDF Chatbot <span class="text-gray-400 text-base font-normal">| LLM, Langchain, RAG, Azure VM</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Developed a chatbot using a RAG-oriented LLM, with the ability to create a RAG pipeline with the uploaded pdf/csv file.</li>
-                    <li>Utilized Langchain for orchestration, ChromaDB for vector store and Azure Virtual Machine with Docker for deployment.</li>
-                </ul>
-            </div>
-
-            <!-- Loan Default Prediction -->
-            <div>
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Loan Default Prediction - End to End Implementation <span class="text-gray-400 text-base font-normal">| Python, XgBoost, AWS EC2</span></h3>
-                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                    <li>Achieved a ROC AUC score of 0.85 by developing a Loan Default Prediction model for the Lending Club dataset.</li>
-                    <li>Deployed the Loan Default Prediction model in AWS EC2 using Docker for scalable and efficient performance.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section id="technical-skills-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Technical Skills</h2>
-            <div class="flex flex-wrap gap-4">
-                <div class="w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Languages & Frameworks:</h3>
+                <!-- Deloitte Consultant -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Consultant, Deloitte <span class="text-gray-400 text-base font-normal">| Toronto, ON | Oct 2023 - Present</span></h3>
                     <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                        <li>Python</li>
-                        <li>Bash</li>
-                        <li>Oracle SQL</li>
+                        <li>Analyzed, validated, and optimized Generative AI models, enhancing model accuracy.</li>
+                        <li>Developed business intelligence reports using advanced SQL.</li>
+                        <li>Implemented data extraction processes for efficient data migration to outbound systems.</li>
                     </ul>
                 </div>
-                <div class="w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Libraries:</h3>
-                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>SkLearn</li>
-                        <li>Plotly</li>
-                        <li>TensorFlow</li>
-                        <li>Keras</li>
-                        <li>PyTorch</li>
-                        <li>HuggingFace</li>
-                        <li>OpenCV</li>
-                        <li>YOLO</li>
-                        <li>UNet</li>
-                        <li>LangChain</li>
-                    </ul>
-                </div>
-                <div class="w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Developer Tools:</h3>
-                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                        <li>Git</li>
-                        <li>Docker</li>
-                        <li>Databricks</li>
-                        <li>Kubernetes</li>
-                        <li>Jupyter</li>
-                        <li>Github Actions</li>
-                        <li>DVC</li>
-                        <li>PowerBI</li>
-                        <li>Tableau</li>
-                    </ul>
-                </div>
-                <div class="w-full md:w-1/2 lg:w-1/3">
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Skills:</h3>
-                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                        <li>Computer Vision</li>
-                        <li>NLP</li>
-                        <li>Demand Forecasting</li>
-                        <li>Deep Learning</li>
-                        <li>Machine Learning</li>
-                        <li>GenAI</li>
-                        <li>Data Manipulation</li>
-                        <li>LLM</li>
-                    </ul>
-                </div>
-                <div class="w-full">
-                    <h3 class="text-xl font-semibold text-gray-200 mb-2">Cloud Services:</h3>
-                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                        <li>Azure (Machine Learning, Azure Data Factory, Virtual Machines, Logic App, Databricks, Blob Storage, Azure Functions, Azure Data Lake)</li>
-                        <li>Oracle Analytics Publisher</li>
-                        <li>AWS (Sagemaker, EC2, Athena, S3, Glue, Kinesis Data Firehose, Step functions, Pipelines, CloudWatch, ECR, ECS, Lambda, Bedrock)</li>
-                        <li>MLFlow</li>
-                        <li>Heroku</li>
-                        <li>Vertex AI</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications-section" class="mb-12 bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2">Certifications</h2>
-            <ul class="fancy-list text-gray-300 ml-4 space-y-1">
-                <li>AWS Machine Learning Specialty <span class="text-gray-400 text-base font-normal">| Apr 2024</span></li>
-                <li>Azure AI Fundamentals <span class="text-400 text-base font-normal">| Apr 2023</span></li>
-            </ul>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education-section" class="bg-[#000000] p-8 rounded-xl shadow-2xl border-2 border-[#9eed0c] scroll-animate section-glow">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#9eed0c] mb-6 border-b-2 border-[#9eed0c] pb-2 flex items-center">
-                <svg class="w-8 h-8 mr-3 text-[#9eed0c]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 3L1 9l11 6 11-6-11-6zm0 10.96L4.09 9 12 4.04l7.91 4.96L12 13.96zM3 13.96l9 5.04 9-5.04V19l-9 5-9-5v-5.04z"/>
-                </svg>
-                Education
-            </h2>
-            <div class="space-y-8">
-                <!-- Durham College - Post Graduate Certification -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-1">Post Graduate Certification in Artificial Intelligence and Data Analytics</h3>
-                    <p class="text-gray-300 text-lg">Durham College of Applied Arts & Technology | ON, Canada</p>
-                    <p class="text-gray-400 text-base">Sep 2023 - Apr 2025 | GPA: 4.36</p>
+                <!-- Vosyn ML Engineer Intern -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">ML Engineer Intern, Vosyn <span class="text-gray-400 text-base font-normal">| Toronto, ON | Feb 2024 - May 2024</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Achieved a 15% improvement in transcription accuracy by researching and implementing noise suppression techniques for Speech-to-Text applications.</li>
+                        <li>Implemented NLP solutions using Hugging Face Transformers, with experience in fine-tuning LLMs and RAG workflows.</li>
+                        <li>Developed an LLM-based financial analytics chatbot integrated with financial APIs to provide real-time market analysis.</li>
+                    </ul>
                 </div>
 
-                <!-- SSN College of Engineering - Bachelor of Engineering -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-1">Bachelor of Engineering in Electronics and Communication</h3>
-                    <p class="text-gray-300 text-lg">SSN College of Engineering, Anna University | Chennai, India</p>
-                    <p class="text-gray-400 text-base">Aug 2016 - Apr 2020 | Percentage: 77%</p>
+                <!-- Tiger Analytics Senior Analyst -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Senior Analyst - Machine Learning Engineer, Tiger Analytics <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2022 - Aug 2023</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Achieved an average MAPE of 10% for known time series datasets by developing an end-to-end time series demand forecasting tool with 13+ algorithms.</li>
+                        <li>Improved detection rates by 20% by creating an advanced anomaly detection tool with various models for univariate and multivariate time series data.</li>
+                        <li>Skilled in leveraging Azure Data Factory and Databricks to facilitate building pipelines for seamless data processing, hyperparameter tuning, model training, and evaluation workflows.</li>
+                        <li>Hands-on experience in operationalizing ML projects using Azure Machine Learning, MLflow, and AWS SageMaker for model training, deployment, monitoring, and lifecycle management.</li>
+                        <li>Developed interactive dashboards using Panel and Bokeh for effective exploratory data analysis and model evaluation.</li>
+                        <li>Built a price comparison application using Plotly Dash, providing users with interactive charts and visualizations for retail analytics.</li>
+                        <li>Hands-on experience with Python and machine learning frameworks such as Hugging Face, TensorFlow, Keras, and PyTorch, as well as statistical and analytics tools including BigQuery.</li>
+                        <li>Designed and fine-tuned predictive models using regression, decision trees, and deep learning techniques, optimizing performance through hyperparameter tuning and evaluating results with metrics like MAPE, RMSE, and ROC AUC.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
+
+                <!-- Deloitte Analyst -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Analyst, Deloitte <span class="text-gray-400 text-base font-normal">| Chennai, India | Dec 2021 - Jul 2022</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Pioneered 100% end-to-end data extraction, transformation, and migration to Oracle HCM Cloud.</li>
+                        <li>Designed and implemented a comprehensive security strategy for the Oracle Learning Cloud.</li>
+                    </ul>
+                </div>
+
+                <!-- Ford Motors Software Engineer -->
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Software Engineer, Ford Motors <span class="text-gray-400 text-base font-normal">| Chennai, India | Jul 2020 - Dec 2021</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Developed data analysis reports using SQL to extract insights, optimize queries, and support business decisions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Academic Projects Section -->
+            <section id="academic-projects-section" class="mb-12 pt-8 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#deed0c] mb-6 border-b-2 border-[#deed0c] pb-2">Academic Projects</h2>
+
+                <!-- Multiclass Object Detection System -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Multiclass Object Detection System <span class="text-gray-400 text-base font-normal">| Python, Docker, AWS (ECR, EC2, ECS), GitHub Actions</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Developed custom YOLOv8 model for 20-class object detection, with 83% average precision at 0.5 IoU threshold.</li>
+                        <li>Implemented CI/CD pipeline using GitHub Actions and Docker for automated deployment to AWS ECR, ECS and EC2.</li>
+                    </ul>
+                </div>
+
+                <!-- RAG Based PDF Chatbot -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">RAG Based PDF Chatbot <span class="text-gray-400 text-base font-normal">| LLM, Langchain, RAG, Azure VM</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Developed a chatbot using a RAG-oriented LLM, with the ability to create a RAG pipeline with the uploaded pdf/csv file.</li>
+                        <li>Utilized Langchain for orchestration, ChromaDB for vector store and Azure Virtual Machine with Docker for deployment.</li>
+                    </ul>
+                </div>
+
+                <!-- Loan Default Prediction -->
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-2">Loan Default Prediction - End to End Implementation <span class="text-gray-400 text-base font-normal">| Python, XgBoost, AWS EC2</span></h3>
+                    <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                        <li>Achieved a ROC AUC score of 0.85 by developing a Loan Default Prediction model for the Lending Club dataset.</li>
+                        <li>Deployed the Loan Default Prediction model in AWS EC2 using Docker for scalable and efficient performance.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="technical-skills-section" class="mb-12 pt-8 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#deed0c] mb-6 border-b-2 border-[#deed0c] pb-2">Technical Skills</h2>
+                <div class="flex flex-wrap gap-4">
+                    <div class="w-full md:w-1/2 lg:w-1/3">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Languages & Frameworks:</h3>
+                        <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                            <li>Python <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5a6.5 6.5 0 10-6.5 6.5c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-1v-1h-1v1h-1v1h1v1h1v-1h1v-1z"/></svg></li>
+                            <li>Bash</li>
+                            <li>Oracle SQL</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Libraries:</h3>
+                        <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                            <li>TensorFlow <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></li>
+                            <li>Keras</li>
+                            <li>PyTorch</li>
+                            <li>HuggingFace</li>
+                            <li>OpenCV</li>
+                            <li>YOLO</li>
+                            <li>UNet</li>
+                            <li>LangChain</li>
+                            <li>Pandas</li>
+                            <li>NumPy</li>
+                            <li>SkLearn</li>
+                            <li>Plotly</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Developer Tools:</h3>
+                        <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                            <li>Git <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.165 6.839 9.48.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.455-1.157-1.11-1.465-1.11-1.465-.908-.618.069-.606.069-.606 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.089 2.91.832.092-.647.35-1.089.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.09.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.006 9.006 0 0112 5.042c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.025 2.747-1.025.546 1.378.202 2.397.098 2.65.64.699 1.029 1.593 1.029 2.683 0 3.84-2.339 4.687-4.566 4.935.359.308.678.915.678 1.846 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.483C21.137 20.163 24 16.417 24 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></li>
+                            <li>Docker <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10zM12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8zm-1 2H9v2h2V6zm0 4H9v2h2v-2zm0 4H9v2h2v-2zm4-8h-2v2h2V6zm0 4h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></li>
+                            <li>Databricks</li>
+                            <li>Kubernetes</li>
+                            <li>Jupyter <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg></li>
+                            <li>Github Actions</li>
+                            <li>DVC</li>
+                            <li>PowerBI</li>
+                            <li>Tableau</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2 lg:w-1/3">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Skills:</h3>
+                        <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                            <li>Computer Vision</li>
+                            <li>NLP</li>
+                            <li>Demand Forecasting</li>
+                            <li>Deep Learning</li>
+                            <li>Machine Learning</li>
+                            <li>GenAI</li>
+                            <li>Data Manipulation</li>
+                            <li>LLM</li>
+                        </ul>
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl font-semibold text-gray-200 mb-2">Cloud Services:</h3>
+                        <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                            <li>Azure (Machine Learning, Azure Data Factory, Virtual Machines, Logic App, Databricks, Blob Storage, Azure Functions, Azure Data Lake) <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 12.5 12 12.5s2.5 1.12 2.5 2.5S13.38 17.5 12 17.5zm0-7c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/></svg></li>
+                            <li>AWS (Sagemaker, EC2, Athena, S3, Glue, Kinesis Data Firehose, Step functions, Pipelines, CloudWatch, ECR, ECS, Lambda, Bedrock) <svg class="w-4 h-4 inline-block ml-1 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 12.5 12 12.5s2.5 1.12 2.5 2.5S13.38 17.5 12 17.5zm0-7c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/></svg></li>
+                            <li>Oracle Analytics Publisher</li>
+                            <li>MLFlow</li>
+                            <li>Heroku</li>
+                            <li>Vertex AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section id="certifications-section" class="mb-12 pt-8 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#deed0c] mb-6 border-b-2 border-[#deed0c] pb-2">Certifications</h2>
+                <ul class="fancy-list text-gray-300 ml-4 space-y-1">
+                    <li>AWS Machine Learning Specialty <span class="text-gray-400 text-base font-normal">| Apr 2024</span></li>
+                    <li>Azure AI Fundamentals <span class="text-gray-400 text-base font-normal">| Apr 2023</span></li>
+                </ul>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education-section" class="pt-8 scroll-animate">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#deed0c] mb-6 border-b-2 border-[#deed0c] pb-2 flex items-center">
+                    <svg class="w-8 h-8 mr-3 text-[#deed0c]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l11 6 11-6-11-6zm0 10.96L4.09 9 12 4.04l7.91 4.96L12 13.96zM3 13.96l9 5.04 9-5.04V19l-9 5-9-5v-5.04z"/>
+                    </svg>
+                    Education
+                </h2>
+                <div class="space-y-8">
+                    <!-- Durham College - Post Graduate Certification -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-1">Post Graduate Certification in Artificial Intelligence and Data Analytics</h3>
+                        <p class="text-gray-300 text-lg">Durham College of Applied Arts & Technology | ON, Canada</p>
+                        <p class="text-gray-400 text-base">Sep 2023 - Apr 2025 | GPA: 4.36</p>
+                    </div>
+
+                    <!-- SSN College of Engineering - Bachelor of Engineering -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl md:text-2xl font-semibold text-gray-200 mb-1">Bachelor of Engineering in Electronics and Communication</h3>
+                        <p class="text-gray-300 text-lg">SSN College of Engineering, Anna University | Chennai, India</p>
+                        <p class="text-gray-400 text-base">Aug 2016 - Apr 2020 | Percentage: 77%</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
     </div>
 
